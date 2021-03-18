@@ -1,9 +1,9 @@
 package comp533.a1.model;
 
-import comp533.a1.model.mapper.ITokenCountingMapper;
-import comp533.a1.model.mapper.TokenCountingMapperFactory;
-import comp533.a1.model.reducer.ITokenCountingReducer;
-import comp533.a1.model.reducer.TokenCountingReducerFactory;
+import comp533.a1.model.mapper.IMapper;
+import comp533.a1.model.mapper.MapperFactory;
+import comp533.a1.model.reducer.IReducer;
+import comp533.a1.model.reducer.ReducerFactory;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
 import java.beans.PropertyChangeListener;
@@ -14,12 +14,12 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Model extends AMapReduceTracer {
+public class TokenCountingModel extends AMapReduceTracer {
     private String inputString;
     private Map<String, Integer> output;
     private PropertyChangeSupport support;
 
-    public Model() {
+    public TokenCountingModel() {
         output = new HashMap<>();
         support = new PropertyChangeSupport(this);
     }
@@ -28,8 +28,8 @@ public class Model extends AMapReduceTracer {
         support.firePropertyChange("InputString",this.inputString, inputString);
         this.inputString = inputString;
         String[] inputs = this.inputString.split( " ");
-        ITokenCountingMapper mapper = TokenCountingMapperFactory.getMapper();
-        ITokenCountingReducer reducer = TokenCountingReducerFactory.getReducer();
+        IMapper mapper = MapperFactory.getMapper();
+        IReducer reducer = ReducerFactory.getReducer();
         List<KeyValue> list = new ArrayList();
         for(String input:inputs){
             KeyValue kv = mapper.map(input);

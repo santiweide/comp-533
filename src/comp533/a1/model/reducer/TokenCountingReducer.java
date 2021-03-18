@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * @author algorithm
  */
-public class TokenCountingReducer implements ITokenCountingReducer{
+public class TokenCountingReducer implements IReducer {
 
     @Override
     public Map<String, Integer> reduce(List<KeyValue> list){

@@ -1,14 +1,15 @@
 package comp533.a1;
 
-import comp533.a1.controller.Controller;
+import comp533.a1.controller.TokenCountingController;
 import comp533.a1.model.KeyValue;
-import comp533.a1.model.Model;
+import comp533.a1.model.TokenCountingModel;
+import comp533.a1.model.mapper.IntSummingMapper;
+import comp533.a1.model.mapper.MapperFactory;
+import comp533.a1.model.mapper.TokenCountingMapper;
 import comp533.a1.view.View;
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
-import comp533.a1.model.mapper.TokenCountingMapper;
-import comp533.a1.model.mapper.TokenCountingMapperFactory;
 import comp533.a1.model.reducer.TokenCountingReducer;
-import comp533.a1.model.reducer.TokenCountingReducerFactory;
+import comp533.a1.model.reducer.ReducerFactory;
 
 public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
@@ -19,12 +20,12 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getStandAloneIntegerSummer() {
-        return null;
+        return IntSumming.class;
     }
 
     @Override
     public Class getModelClass() {
-        return Model.class;
+        return TokenCountingModel.class;
     }
 
     @Override
@@ -34,17 +35,17 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getControllerClass() {
-        return Controller.class;
+        return TokenCountingController.class;
     }
 
     @Override
     public Class getMapperFactory() {
-        return TokenCountingMapperFactory.class;
+        return MapperFactory.class;
     }
 
     @Override
     public Class getReducerFactory() {
-        return TokenCountingReducerFactory.class;
+        return ReducerFactory.class;
     }
 
     @Override
@@ -59,7 +60,7 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getIntSummingMapperClass() {
-        return null;
+        return IntSummingMapper.class;
     }
 
     @Override
@@ -69,17 +70,18 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Object getTokenCountingMapper() {
-        return TokenCountingMapperFactory.getMapper();
+        return MapperFactory.getMapper();
     }
 
     @Override
     public Object getIntSummingMapper() {
-        return null;
+        MapperFactory.setMapper(new IntSummingMapper());
+        return MapperFactory.getMapper();
     }
 
     @Override
     public Object getReducer() {
-        return TokenCountingReducerFactory.getReducer();
+        return ReducerFactory.getReducer();
     }
 
     @Override
