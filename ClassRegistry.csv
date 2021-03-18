@@ -1,4 +1,4 @@
-comp533.a1.Controller,ControllerClass
+comp533.a1.controller.Controller,ControllerClass
 comp533.a1.model.KeyValue,KeyValueClass
 comp533.a1.model.mapper.TokenCountingMapperFactory,MapperFactory
 comp533.a1.model.Model,ModelClass
@@ -8,4 +8,4 @@ comp533.a1.model.reducer.TokenCountingReducerFactory,ReducerFactory
 comp533.a1.TokenCounter,StandAloneTokenCounter
 comp533.a1.model.mapper.TokenCountingMapper,TokenCountingMapperClass
 comp533.a1.model.mapper.ITokenCountingMapper,TokenCountingMapperClass
-comp533.a1.View,ViewClass
+comp533.a1.view.View,ViewClass

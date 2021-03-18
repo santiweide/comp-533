@@ -1,4 +1,4 @@
-package comp533.a1;
+package comp533.a1.view;
 
 import comp533.a1.model.Model;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
@@ -18,7 +18,7 @@ public class View extends AMapReduceTracer implements PropertyChangeListener {
 
     @Override
     public String toString(){
-        return "VIEW";
+        return "View";
     }
 
     @Override

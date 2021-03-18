@@ -7,11 +7,14 @@ package comp533.a1.model.mapper;
 public class TokenCountingMapperFactory {
     private static ITokenCountingMapper Mapper = new TokenCountingMapper();
 
+    public TokenCountingMapperFactory(ITokenCountingMapper mapper){
+        Mapper = mapper;
+    }
     public static Class getMapperFactory() {
         return TokenCountingMapperFactory.class;
     }
 
-    public static ITokenCountingMapper getTokenCountingMapper() {
+    public static ITokenCountingMapper getMapper() {
         return Mapper;
     }
 

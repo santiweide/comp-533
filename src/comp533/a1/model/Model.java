@@ -28,8 +28,8 @@ public class Model extends AMapReduceTracer {
         support.firePropertyChange("InputString",this.inputString, inputString);
         this.inputString = inputString;
         String[] inputs = this.inputString.split( " ");
-        ITokenCountingMapper mapper = TokenCountingMapperFactory.getTokenCountingMapper();
-        ITokenCountingReducer reducer = TokenCountingReducerFactory.getTokenCountingReducer();
+        ITokenCountingMapper mapper = TokenCountingMapperFactory.getMapper();
+        ITokenCountingReducer reducer = TokenCountingReducerFactory.getReducer();
         List<KeyValue> list = new ArrayList();
         for(String input:inputs){
             KeyValue kv = mapper.map(input);
@@ -49,7 +49,7 @@ public class Model extends AMapReduceTracer {
 
     @Override
     public String toString(){
-        return "MODEL";
+        return "Model";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

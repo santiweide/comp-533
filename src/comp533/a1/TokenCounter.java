@@ -1,6 +1,8 @@
 package comp533.a1;
 
+import comp533.a1.controller.Controller;
 import comp533.a1.model.Model;
+import comp533.a1.view.View;
 
 public class TokenCounter {
     public static void main(String[] args) {

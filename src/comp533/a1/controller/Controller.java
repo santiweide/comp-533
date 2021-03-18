@@ -1,4 +1,4 @@
-package comp533.a1;
+package comp533.a1.controller;
 
 import comp533.a1.model.Model;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
@@ -10,14 +10,14 @@ public class Controller extends AMapReduceTracer{
     public Controller(comp533.a1.model.Model Model){
         this.Model = Model;
     }
-    void run(){
+    public void run(){
         this.traceNumbersPrompt();
         Scanner scanner = new Scanner(System.in);
         Model.setInputString(scanner.nextLine());
     }
     @Override
     public String toString(){
-        return "CONTROLLER";
+        return "Controller";
     }
 
 }

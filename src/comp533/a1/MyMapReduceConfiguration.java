@@ -1,7 +1,9 @@
 package comp533.a1;
 
+import comp533.a1.controller.Controller;
 import comp533.a1.model.KeyValue;
 import comp533.a1.model.Model;
+import comp533.a1.view.View;
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
 import comp533.a1.model.mapper.TokenCountingMapper;
 import comp533.a1.model.mapper.TokenCountingMapperFactory;
@@ -67,7 +69,7 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Object getTokenCountingMapper() {
-        return TokenCountingMapperFactory.getTokenCountingMapper();
+        return TokenCountingMapperFactory.getMapper();
     }
 
     @Override
@@ -77,7 +79,7 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Object getReducer() {
-        return TokenCountingReducerFactory.getTokenCountingReducer();
+        return TokenCountingReducerFactory.getReducer();
     }
 
     @Override
