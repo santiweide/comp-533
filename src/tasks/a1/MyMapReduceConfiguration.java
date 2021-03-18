@@ -16,17 +16,17 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getModelClass() {
-        return null;
+        return Model.class;
     }
 
     @Override
     public Class getViewClass() {
-        return null;
+        return View.class;
     }
 
     @Override
     public Class getControllerClass() {
-        return null;
+        return Controller.class;
     }
 
     @Override

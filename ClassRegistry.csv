@@ -1,1 +1,4 @@
+tasks.a1.Controller,ControllerClass
+tasks.a1.Model,ModelClass
 tasks.a1.TokenCounter,StandAloneTokenCounter
+tasks.a1.View,ViewClass
