@@ -1,6 +1,6 @@
 package comp533.a1;
 
-import comp533.a1.controller.TokenCountingController;
+import comp533.a1.controller.Controller;
 import comp533.a1.model.KeyValue;
 import comp533.a1.model.TokenCountingModel;
 import comp533.a1.model.mapper.IntSummingMapper;
@@ -35,7 +35,7 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getControllerClass() {
-        return TokenCountingController.class;
+        return Controller.class;
     }
 
     @Override

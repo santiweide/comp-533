@@ -1,6 +1,7 @@
 package comp533.a1.model;
 
 import comp533.a1.model.mapper.IMapper;
+import comp533.a1.model.mapper.IntSummingMapper;
 import comp533.a1.model.mapper.MapperFactory;
 import comp533.a1.model.reducer.IReducer;
 import comp533.a1.model.reducer.ReducerFactory;
@@ -13,13 +14,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-public class TokenCountingModel extends AMapReduceTracer implements IModel {
+public class IntSummingModel extends AMapReduceTracer implements IModel {
     private String inputString;
     private Map<String, Integer> output;
     private PropertyChangeSupport support;
 
-    public TokenCountingModel() {
+    public IntSummingModel() {
         output = new HashMap<>();
         support = new PropertyChangeSupport(this);
     }
@@ -29,6 +29,7 @@ public class TokenCountingModel extends AMapReduceTracer implements IModel {
         support.firePropertyChange("InputString",this.inputString, inputString);
         this.inputString = inputString;
         String[] inputs = this.inputString.split( " ");
+        MapperFactory.setMapper(new IntSummingMapper());
         IMapper mapper = MapperFactory.getMapper();
         IReducer reducer = ReducerFactory.getReducer();
         List<KeyValue> list = new ArrayList();
@@ -57,5 +58,4 @@ public class TokenCountingModel extends AMapReduceTracer implements IModel {
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         this.support.addPropertyChangeListener(listener);
     }
-
 }

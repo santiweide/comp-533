@@ -1,9 +1,10 @@
-comp533.a1.controller.TokenCountingController,ControllerClass
+comp533.a1.controller.Controller,ControllerClass
 comp533.a1.model.mapper.IntSummingMapper,IntSummingMapperClass
 comp533.a1.model.mapper.IMapper,IntSummingMapperClass
 comp533.a1.model.KeyValue,KeyValueClass
 comp533.a1.model.mapper.MapperFactory,MapperFactory
 comp533.a1.model.TokenCountingModel,ModelClass
+comp533.a1.model.IModel,ModelClass
 comp533.a1.model.reducer.TokenCountingReducer,ReducerClass
 comp533.a1.model.reducer.IReducer,ReducerClass
 comp533.a1.model.reducer.ReducerFactory,ReducerFactory
