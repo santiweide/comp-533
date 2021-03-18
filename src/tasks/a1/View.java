@@ -11,8 +11,8 @@ import java.beans.PropertyChangeListener;
  */
 public class View extends AMapReduceTracer implements PropertyChangeListener {
 
-    public View(Model model) {
-        model.addPropertyChangeListener(this);
+    public View(Model Model) {
+        Model.addPropertyChangeListener(this);
     }
 
     @Override

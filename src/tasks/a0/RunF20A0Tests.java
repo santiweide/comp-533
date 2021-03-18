@@ -1,4 +1,4 @@
-package main;
+package tasks.a0;
 
 import grader.basics.execution.BasicProjectExecution;
 import gradingTools.comp533s21.assignment0.S21Assignment0Suite;

@@ -1,6 +1,8 @@
 package tasks.a1;
 
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
+import tasks.a1.mapper.TokenCountingMapper;
+import tasks.a1.mapper.TokenCountingMapperFactory;
 
 public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
@@ -31,7 +33,7 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getMapperFactory() {
-        return null;
+        return TokenCountingMapperFactory.class;
     }
 
     @Override
@@ -41,12 +43,12 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getKeyValueClass() {
-        return null;
+        return KeyValue.class;
     }
 
     @Override
     public Class getTokenCountingMapperClass() {
-        return null;
+        return TokenCountingMapper.class;
     }
 
     @Override
