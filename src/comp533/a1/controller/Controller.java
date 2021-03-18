@@ -1,7 +1,6 @@
 package comp533.a1.controller;
 
 import comp533.a1.model.IModel;
-import comp533.a1.model.TokenCountingModel;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 
 import java.util.Scanner;

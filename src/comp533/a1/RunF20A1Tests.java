@@ -12,9 +12,9 @@ public class RunF20A1Tests {
         // not just the ones that failed
         GraderBasicsTraceUtility.setBufferTracedMessages(true);
         // Change this number if a test trace gets longer than 600 and is clipped
-        GraderBasicsTraceUtility.setMaxPrintedTraces(600);
+        GraderBasicsTraceUtility.setMaxPrintedTraces(10000);
         // Change this number if all traces together are longer than 2000
-        GraderBasicsTraceUtility.setMaxTraces(2000);
+        GraderBasicsTraceUtility.setMaxTraces(20000);
         // Change this number if your process times out prematurely
         BasicProjectExecution.setProcessTimeOut(5);
         // You need to always call such a method

@@ -1,6 +1,7 @@
 package comp533.a1;
 
 import comp533.a1.controller.Controller;
+import comp533.a1.model.IModel;
 import comp533.a1.model.KeyValue;
 import comp533.a1.model.TokenCountingModel;
 import comp533.a1.model.mapper.IntSummingMapper;
@@ -8,7 +9,7 @@ import comp533.a1.model.mapper.MapperFactory;
 import comp533.a1.model.mapper.TokenCountingMapper;
 import comp533.a1.view.View;
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
-import comp533.a1.model.reducer.TokenCountingReducer;
+import comp533.a1.model.reducer.Reducer;
 import comp533.a1.model.reducer.ReducerFactory;
 
 public class MyMapReduceConfiguration implements MapReduceConfiguration {
@@ -25,7 +26,7 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getModelClass() {
-        return TokenCountingModel.class;
+        return IModel.class;
     }
 
     @Override
@@ -59,13 +60,11 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
     }
 
     @Override
-    public Class getIntSummingMapperClass() {
-        return IntSummingMapper.class;
-    }
+    public Class getIntSummingMapperClass() { return IntSummingMapper.class; }
 
     @Override
     public Class getReducerClass() {
-        return TokenCountingReducer.class;
+        return Reducer.class;
     }
 
     @Override

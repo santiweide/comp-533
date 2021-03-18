@@ -1,7 +1,7 @@
 package comp533.a1.model.reducer;
 
 public class ReducerFactory {
-    private static IReducer Reducer = new TokenCountingReducer();
+    private static IReducer Reducer = new Reducer();
 
     public ReducerFactory(IReducer reducer) {
         Reducer = reducer;
