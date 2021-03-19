@@ -82,10 +82,6 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
         return ReducerFactory.getReducer();
     }
 
-    /**
-     *  A2 begin
-      */
-
     @Override
     public Class getPartitionerClass() {
         return null;
@@ -116,9 +112,6 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
         return null;
     }
 
-    /**
-     * A2 end
-     */
     @Override
     public Object getBarrier(int i) {
         return null;
