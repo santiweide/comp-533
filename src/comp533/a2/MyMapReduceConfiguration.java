@@ -1,15 +1,15 @@
-package comp533.a1;
+package comp533.a2;
 
-import comp533.a1.controller.Controller;
-import comp533.a1.model.IModel;
-import comp533.a1.model.KeyValue;
-import comp533.a1.model.mapper.IntSummingMapper;
-import comp533.a1.model.mapper.MapperFactory;
-import comp533.a1.model.mapper.TokenCountingMapper;
-import comp533.a1.view.View;
+import comp533.a2.controller.Controller;
+import comp533.a2.model.IModel;
+import comp533.a2.model.KeyValue;
+import comp533.a2.model.mapper.IntSummingMapper;
+import comp533.a2.model.mapper.MapperFactory;
+import comp533.a2.model.mapper.TokenCountingMapper;
+import comp533.a2.model.reducer.Reducer;
+import comp533.a2.model.reducer.ReducerFactory;
+import comp533.a2.view.View;
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
-import comp533.a1.model.reducer.Reducer;
-import comp533.a1.model.reducer.ReducerFactory;
 
 public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
@@ -113,7 +113,7 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getSlaveClass() {
-        return null;
+        return Slave.class;
     }
 
     /**
