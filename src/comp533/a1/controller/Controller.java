@@ -11,9 +11,11 @@ public class Controller extends AMapReduceTracer{
         this.model = model;
     }
     public void run(){
-        this.traceNumbersPrompt();
         Scanner scanner = new Scanner(System.in);
-        model.setInputString(scanner.nextLine());
+        while(scanner.hasNext()){
+            this.traceNumbersPrompt();
+            model.setInputString(scanner.nextLine());
+        }
     }
     @Override
     public String toString(){
