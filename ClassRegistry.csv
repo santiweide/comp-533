@@ -1,6 +1,10 @@
+comp533.a2.model.barrier.Barrier,BarrierClass
+comp533.a2.model.barrier.IBarrier,BarrierClass
 comp533.a2.controller.Controller,ControllerClass
 comp533.a2.model.mapper.IntSummingMapper,IntSummingMapperClass
 comp533.a2.model.mapper.IMapper,IntSummingMapperClass
+comp533.a2.model.joiner.Joiner,JoinerClass
+comp533.a2.model.joiner.IJoiner,JoinerClass
 comp533.a2.model.KeyValue,KeyValueClass
 comp533.a2.model.mapper.MapperFactory,MapperFactory
 comp533.a2.model.IModel,ModelClass

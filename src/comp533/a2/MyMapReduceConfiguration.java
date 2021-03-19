@@ -3,6 +3,8 @@ package comp533.a2;
 import comp533.a2.controller.Controller;
 import comp533.a2.model.IModel;
 import comp533.a2.model.KeyValue;
+import comp533.a2.model.barrier.Barrier;
+import comp533.a2.model.joiner.Joiner;
 import comp533.a2.model.mapper.IntSummingMapper;
 import comp533.a2.model.mapper.MapperFactory;
 import comp533.a2.model.mapper.TokenCountingMapper;
@@ -113,12 +115,12 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
 
     @Override
     public Class getJoinerClass() {
-        return null;
+        return Joiner.class;
     }
 
     @Override
     public Class getBarrierClass() {
-        return null;
+        return Barrier.class;
     }
 
     @Override
@@ -126,20 +128,20 @@ public class MyMapReduceConfiguration implements MapReduceConfiguration {
         return Slave.class;
     }
 
-    /**
-     * A2 end
-     * A3 begin
-     */
     @Override
     public Object getBarrier(int i) {
-        return null;
+        return new Barrier(i);
     }
 
     @Override
     public Object getJoiner(int i) {
-        return null;
+        return new Joiner(i);
     }
 
+    /**
+     * A2 end
+     * A3 begin
+     */
     @Override
     public Class getServerTokenCounter() {
         return null;
