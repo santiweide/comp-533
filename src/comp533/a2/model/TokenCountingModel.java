@@ -8,6 +8,7 @@ import comp533.a2.model.mapper.IMapper;
 import comp533.a2.model.mapper.MapperFactory;
 import comp533.a2.model.reducer.IReducer;
 import comp533.a2.model.reducer.ReducerFactory;
+import comp533.a2.model.slave.Slave;
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 import org.checkerframework.checker.units.qual.K;
 
@@ -85,7 +86,9 @@ public class TokenCountingModel extends AMapReduceTracer implements IModel {
         // 6.   Join
         joiner.join();
         //---------- here begins the slaves -----------------
-
+        for(Thread thread:threads){
+            thread.start();
+        }
 
         // 7.	Merge partitioned results serially
         //  It serially combines into the Result property the slaves’  final reductions of their partitions in the reduction queue list..
@@ -128,7 +131,9 @@ public class TokenCountingModel extends AMapReduceTracer implements IModel {
         this.numThreads = numThreads;
         List<Thread> newList = new ArrayList<>();
         for (int i = 0; i < numThreads; i++) {
-            newList.add(new Thread("Slave<" + i + ">"));
+            Thread t = new Thread(new Slave());
+            t.setName("Slave<" + i + ">");
+            newList.add(new Thread(t));
             // add a separate reduction queue to the ReductionQueueList for each slave thread.
             reductionQueueList.add(new LinkedList<>());
         }
